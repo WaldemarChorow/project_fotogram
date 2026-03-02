@@ -87,37 +87,43 @@ footer{
     display: none !important;
 }
 
+/* Overlay section */
 #overlay {
-    
-    position: fixed; /* Klebt am Bildschirm fest, scrollt nicht mit */
-    width: 675px;
-    height: 675px; 
-    background-color: #09212A;
-    border-radius: 40px;
-    z-index: 999; /* Zwingt den Kasten über alle anderen Elemente */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(9, 33, 42, 0.0);
+    z-index: 999;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+    color: white;
+    align-items: center;     
 }
 
-/* Der Inhalt in der Mitte */
+/* Overlay window */
 .overlay-content {
+    width: 675px;            
+    height: 675px;           
+    background-color: #09212A; 
+    border-radius: 40px;     
+    padding: 20px 30px;     
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    color: white;
+    justify-content: space-between;
 }
 
-/* Das große Bild */
+/* Overlay Image*/
 #overlay-img {
-    max-height: auto; /* Darf maximal 70% der Bildschirmhöhe einnehmen */
-    max-width: 560px;
+    max-height: 500px;
+    max-width: 100%;
     object-fit: contain;
 }
 
 .close-btn {
-    align-self: flex-end; /* Schiebt das X nach rechts oben */
+    align-self: flex-end;
     font-size: 24px;
     cursor: pointer;
 }
@@ -128,7 +134,23 @@ footer{
     gap: 30px;
 }
 
-.prev_img{
-    background-image: url(img/Rectangle\ 1.svg);
-    
+.round-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #1f1e23;
+    background-size: cover;
+    background-position: center;    
+    display: flex;
+    justify-content: center;
+    align-items: center;      
+    border: none;
+    cursor: pointer; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+.round-btn:hover {
+    transform: scale(1.1);
+    background-color: #372528;
 }

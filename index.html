@@ -1,54 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fotogram</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link href="font/Figtree/Figtree-Italic-VariableFont_wght.ttf">
-    <link href="font/Figtree/Figtree-VariableFont_wght.ttf">
+    <link rel="stylesheet" href="style.css" />
+    <link href="font/Figtree/Figtree-Italic-VariableFont_wght.ttf" />
+    <link href="font/Figtree/Figtree-VariableFont_wght.ttf" />
 
     <script src="script.js"></script>
-</head>
+  </head>
 
-<body onload="render()">
+  <body onload="render()">
     <header>
-        <nav>
-            <div><img src="img/Capa_1.svg" alt=""></div>
-        </nav>
+      <nav>
+        <div><img src="img/Capa_1.svg" alt="" /></div>
+      </nav>
     </header>
 
     <main>
-        <section>
-            <h1>Your personal photo album</h1>
-            <div id="gallery">
-            </div>
-        </section>
-
+      <section>
+        <h1>Your personal photo album</h1>
+        <div id="gallery"></div>
+      </section>
     </main>
 
     <footer>
-        <img src="img/Logo.png" alt="logo from develpoper akademie">
-        <p>© 2023 Developer Akademie GmbH</p>
+      <img src="img/Logo.png" alt="logo from develpoper akademie" />
+      <p>© 2023 Developer Akademie GmbH</p>
     </footer>
-   
-    
-    <section id="overlay" class="d-none">
-        
-        <div class="overlay-content">
-            <span class="close-btn" onclick="closeOverlay()"><img src="img/Property 1=Default.svg" alt=""></span>
-            
-            <img id="overlay-img" src="" alt="Großes Galeriebild">
-            
-            <div class="overlay-controls">
-                <button class="prev_img" conclick="previousImage()"><img src="img/Arrow-Right.svg" alt=""></button>
-                <span id="image-counter">1/12</span>
-                <button class="next_img" onclick="nextImage()"><img src="img/Arrow-Right.svg" alt=""></button>
-            </div>
-        </div>
 
+    <section id="overlay" class="d-none">
+      <div class="overlay-content">
+        <span class="close-btn" onclick="closeOverlay()"
+          ><img src="img/Property 1=Default.svg" alt=""
+        /></span>
+
+        <img id="overlay-img" src="" alt="Großes Galeriebild" />
+
+        <div class="overlay-controls">
+          <button id="prev-btn" class="round-btn" onclick="previousImage()">
+            <img src="img/Arrow-Left.svg" alt="Vorheriges Bild" />
+          </button>
+
+          <span id="image-counter">1/12</span>
+
+          <button id="next-btn" class="round-btn" onclick="nextImage()">
+            <img src="img/Arrow-Right.svg" alt="Nächstes Bild" />
+          </button>
+        </div>
+      </div>
     </section>
-    
-</body>
+  </body>
 </html>
