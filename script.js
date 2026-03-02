@@ -93,3 +93,34 @@ function closeOverlay() {
     document.getElementById('overlay').classList.add('d-none');
 }
 
+// Funktion für den RECHTEN Pfeil (Vorwärts)
+function nextImage() {
+    currentImageIndex++; // Zähle hoch
+
+    // Wenn wir über das letzte Bild hinausschießen, fangen wir wieder bei 0 an
+    if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+    }
+
+    document.getElementById('overlay-img').src = images[currentImageIndex].srcLarge;
+    updateCounter();
+}
+
+// Funktion für den LINKEN Pfeil (Rückwärts)
+function previousImage() {
+    currentImageIndex--; // Zähle runter
+
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    }
+
+    document.getElementById('overlay-img').src = images[currentImageIndex].srcLarge;
+    updateCounter();
+}
+
+// Hilfsfunktion
+function updateCounter() {
+    let counterElement = document.getElementById('image-counter');
+    
+    counterElement.innerHTML = `${currentImageIndex + 1} / ${images.length}`;
+}

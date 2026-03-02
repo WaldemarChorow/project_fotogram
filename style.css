@@ -122,6 +122,7 @@ footer{
     object-fit: contain;
 }
 
+/* Button */
 .close-btn {
     align-self: flex-end;
     font-size: 24px;
