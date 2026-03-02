@@ -15,7 +15,7 @@
 <body onload="render()">
     <header>
         <nav>
-            <img src="img/Capa_1.svg" alt="Das Logo von Fotogram mit dem Schriftzuf Fotogram">
+            <div><img src="img/Capa_1.svg" alt=""></div>
         </nav>
     </header>
 
@@ -32,7 +32,23 @@
         <img src="img/Logo.png" alt="logo from develpoper akademie">
         <p>© 2023 Developer Akademie GmbH</p>
     </footer>
+   
+    
+    <section id="overlay" class="d-none">
         
+        <div class="overlay-content">
+            <span class="close-btn" onclick="closeOverlay()"><img src="img/Property 1=Default.svg" alt=""></span>
+            
+            <img id="overlay-img" src="" alt="Großes Galeriebild">
+            
+            <div class="overlay-controls">
+                <button class="prev_img" conclick="previousImage()"><img src="img/Arrow-Right.svg" alt=""></button>
+                <span id="image-counter">1/12</span>
+                <button class="next_img" onclick="nextImage()"><img src="img/Arrow-Right.svg" alt=""></button>
+            </div>
+        </div>
+
+    </section>
     
 </body>
 </html>
