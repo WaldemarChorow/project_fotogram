@@ -85,7 +85,7 @@ footer {
 }
 
 .d-none {
-  display: none !important;
+  display: none;
 }
 
 /* Overlay section */
@@ -101,6 +101,10 @@ footer {
   justify-content: center;
   color: white;
   align-items: center;
+}
+
+#overlay.d-none {
+  display: none;
 }
 
 /* Overlay window */
