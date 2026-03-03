@@ -58,7 +58,7 @@ let images = [
     },
         {
         src: "img/gallery/Component 17.svg",
-        srcLarge: "img/gallery/gallery_img_large/Component 17.svg",
+        srcLarge: "img/gallery/gallery_img_large/frozen-lake.jpg",
         altText: "picture from frozen lake with mountains with snow-capped peaks "
     },
 
@@ -71,7 +71,7 @@ function render(){
     // Container sauber machen
     container.innerHTML = ""; 
     
-    // Die Schleife geht jetzt durch unser neues 'images'-Array
+    // Die Schleife geht jetzt durch‚ 'images'-Array
     for (let index = 0; index < images.length; index++) {
     
         container.innerHTML += /*html*/`<img onclick="openOverlay(${index})" src="${images[index].src}" alt="${images[index].altText}">`;       
@@ -97,7 +97,7 @@ function closeOverlay() {
 function nextImage() {
     currentImageIndex++; // Zähle hoch
 
-    // Wenn wir über das letzte Bild hinausschießen, fangen wir wieder bei 0 an
+
     if (currentImageIndex >= images.length) {
         currentImageIndex = 0;
     }
