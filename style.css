@@ -1,8 +1,9 @@
+/* FONT FAMILYS*/
 @font-face {
   font-family: "Figtree";
   src: url(font/Figtree/Figtree-VariableFont_wght.ttf);
 }
-
+/* Body */
 body {
   margin: 0;
   padding: 0;
@@ -14,7 +15,7 @@ body {
   background-color: #06171e;
   font-family: "Figtree";
 }
-
+/* HEADER */
 header {
   display: flex;
   justify-content: center;
@@ -23,11 +24,12 @@ header {
   height: 83px;
   background-color: #09212a;
 }
+/* NAVIGATIONBAR */
 nav {
   width: 1440px;
   margin-left: 25px;
 }
-
+/* MAIN-SECTION */
 main {
   flex: 1;
   display: flex;
@@ -57,15 +59,19 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 0px 25px;
+  cursor: pointer;
 
   img {
     height: 150px;
     width: 150px;
     padding: 25px 5px;
   }
+  img:hover {
+    transform: scale(1.1);
+  }
 }
 
+/* FOOTER */
 footer {
   background-image: url(./img/Subtract.svg);
   background-repeat: no-repeat;
@@ -84,6 +90,7 @@ footer {
   padding-bottom: 16px;
 }
 
+/* OVERLAY WINDOW */
 .d-none {
   display: none;
 }
@@ -120,18 +127,30 @@ footer {
   justify-content: space-between;
 }
 
+/* Image Area */
+.img-area {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 15px 0;
+}
 /* Overlay Image*/
 #overlay-img {
-  max-height: 500px;
+  max-height: 100%;
   max-width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Button */
 .close-btn {
   align-self: flex-end;
-  font-size: 24px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 .close-btn:hover {
   border-radius: 50%;
@@ -145,7 +164,6 @@ footer {
   align-items: center;
   gap: 30px;
 }
-
 .round-btn {
   width: 60px;
   height: 60px;
@@ -161,12 +179,17 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s;
 }
-
 .round-btn:hover {
   transform: scale(1.1);
   background-color: #372528;
 }
+#image-counter {
+  min-width: 80px;
+  text-align: center;
+  font-size: 18px;
+}
 
+/* RESPONSIV MOBILE */
 @media (max-width: 375px) {
   nav {
     width: 100%;
@@ -208,6 +231,6 @@ footer {
   #overlay-img {
     height: 375px;
     width: 300px;
-    object-fit: cover;
+    object-fit: contain;
   }
 }

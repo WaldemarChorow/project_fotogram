@@ -35,19 +35,17 @@
     <!-- OVERLAY WINDOW -->
     <section id="overlay" class="d-none">
       <div class="overlay-content">
-        <span class="close-btn" onclick="closeOverlay()"
+        <button class="close-btn" onclick="closeOverlay()" aria-label="Gallery close"
           ><img src="img/Property 1=Default.svg" alt=""
-        /></span>
-
-        <img id="overlay-img" src="" alt="Großes Galeriebild" />
-
+        /></button>
+        <div class="img-area">
+            <img id="overlay-img" src="" alt="Großes Galeriebild" />
+        </div>  
         <div class="overlay-controls">
           <button id="prev-btn" class="round-btn" onclick="previousImage()">
             <img src="img/Arrow-Left.svg" alt="Vorheriges Bild" />
           </button>
-
           <span id="image-counter">1/12</span>
-
           <button id="next-btn" class="round-btn" onclick="nextImage()">
             <img src="img/Arrow-Right.svg" alt="Nächstes Bild" />
           </button>

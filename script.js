@@ -1,5 +1,4 @@
 let currentImageIndex = 0;
-
 let images = [
     {
         src: "img/gallery/Component 6.svg",
@@ -64,48 +63,44 @@ let images = [
 
 
 ];
-
 function render(){
-    let container = document.getElementById('gallery');
-    
+    let container = document.getElementById('gallery');    
     // Container sauber machen
-    container.innerHTML = ""; 
-    
+    container.innerHTML = "";     
     // Die Schleife geht jetzt durch‚ 'images'-Array
-    for (let index = 0; index < images.length; index++) {
-    
-        container.innerHTML += /*html*/`<img onclick="openOverlay(${index})" src="${images[index].src}" alt="${images[index].altText}">`;       
+    for (let index = 0; index < images.length; index++) {    
+        container.innerHTML += /*html*/`
+            <img 
+            tabindex="0" 
+            onclick="openOverlay(${index})"
+            onkeydown="if(event-key === 'Enter' openOverlay({index})" 
+            src="${images[index].src}" 
+            alt="${images[index].altText}">
+            `;       
     }
 }
-
 function openOverlay(index) {
-    currentImageIndex = index;
-    
+    currentImageIndex = index;    
     let imagePath = images[currentImageIndex].srcLarge;
-
     document.getElementById('overlay-img').src = imagePath;    
     document.getElementById('overlay').classList.remove('d-none');
+    updateCounter();
 }
 
 // X EXIT Click
-function closeOverlay() {
-    
+function closeOverlay() {    
     document.getElementById('overlay').classList.add('d-none');
 }
 
 // Funktion für den RECHTEN Pfeil (Vorwärts)
 function nextImage() {
-    currentImageIndex++; // Zähle hoch
-
-
+    currentImageIndex++;
     if (currentImageIndex >= images.length) {
         currentImageIndex = 0;
     }
-
     document.getElementById('overlay-img').src = images[currentImageIndex].srcLarge;
     updateCounter();
 }
-
 // Funktion für den LINKEN Pfeil (Rückwärts)
 function previousImage() {
     currentImageIndex--; // Zähle runter
@@ -113,14 +108,11 @@ function previousImage() {
     if (currentImageIndex < 0) {
         currentImageIndex = images.length - 1;
     }
-
     document.getElementById('overlay-img').src = images[currentImageIndex].srcLarge;
     updateCounter();
 }
-
 // Hilfsfunktion
 function updateCounter() {
     let counterElement = document.getElementById('image-counter');
-    
     counterElement.innerHTML = `${currentImageIndex + 1} / ${images.length}`;
 }
